@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>PinXtract - Best Pinterest Video Downloader | Download HD Videos, GIFs & Images (No Watermark)</title>
+  <meta name="title" content="PinXtract - Best Pinterest Video Downloader | Download HD Videos, GIFs & Images">
+  <meta name="description" content="Free, fast and ultra-HD Pinterest Video Downloader. Convert and extract Pinterest videos to MP4, save high-res images, GIFs, stories, and carousels in 1080p/720p without watermark using PinXtract.">
+  <meta name="keywords" content="PinXtract, pinxtract, Pinterest Video Downloader, download Pinterest videos, Pinterest to MP4, Pinterest image downloader, Pinterest GIF saver, save Pinterest video without watermark, Pinterest 1080p downloader">
+  <meta name="theme-color" content="#e60023">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pinxtract.com/">
+  <meta property="og:title" content="PinXtract - Best Pinterest Video, GIF & Image Downloader">
+  <meta property="og:description" content="Download Pinterest Videos in 1080p HD, Save High-Resolution Images and Animated GIFs in 1-Click with direct downloads and zero watermarks.">
+  <meta property="og:image" content="https://pinxtract.com/og-banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="PinXtract - Ultra Fast Pinterest Downloader">
+  <meta property="twitter:description" content="Download Pinterest Videos in 1080p HD, Save High-Resolution Images and Animated GIFs in 1-Click with direct downloads.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23e60023'/><path d='M50 20C33.4 20 20 33.4 20 50c0 12.8 8 23.7 19.3 27.9-.3-2.4-.5-6 .1-8.6l3.6-15.3s-.9-1.8-.9-4.5c0-4.2 2.4-7.4 5.5-7.4 2.6 0 3.8 1.9 3.8 4.3 0 2.6-1.7 6.5-2.5 10.1-.7 3 1.5 5.5 4.5 5.5 5.4 0 9.5-5.7 9.5-13.9 0-7.3-5.2-12.4-12.7-12.4-9.3 0-14.8 7-14.8 14.2 0 2.8 1.1 5.8 2.4 7.4.3.3.3.6.2 1-.3 1.1-.9 3.6-1 4.1-.2.7-.6.9-1.3.5-4.9-2.3-7.9-9.4-7.9-15.2 0-12.4 9-23.7 25.9-23.7 13.6 0 24.2 9.7 24.2 22.6 0 13.5-8.5 24.4-20.3 24.4-4 0-7.7-2.1-9-4.5l-2.4 9.3c-.9 3.4-3.3 7.7-4.9 10.3 3.6 1.1 7.4 1.7 11.3 1.7 16.6 0 30-13.4 30-30C80 33.4 66.6 20 50 20z' fill='%23ffffff'/></svg>">
+</head>
+<body>
+
+  <!-- Top Notification Banner -->
+  <div class="top-banner" id="topBanner">
+    <div class="container banner-inner">
+      <span class="badge-accent">⚡ v2.5 Update</span>
+      <p class="banner-text"><strong>High-Speed DL2 Servers Live:</strong> Instant 1080p & 720p HD MP4 extraction, original 4K/2K image downloads & mobile auto-save enabled!</p>
+      <button class="banner-close" id="closeBannerBtn" aria-label="Dismiss banner">&times;</button>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="brand-logo" id="brandLogo">
+        <div class="logo-icon-wrap">
+          <svg class="logo-pin-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 4.25 2.67 7.88 6.44 9.3-.09-.8-.17-2.02.04-2.89l1.2-5.11s-.31-.61-.31-1.52c0-1.42.82-2.49 1.85-2.49.87 0 1.29.65 1.29 1.44 0 .88-.56 2.19-.85 3.41-.24 1.01.51 1.84 1.51 1.84 1.81 0 3.21-1.91 3.21-4.66 0-2.44-1.75-4.14-4.26-4.14-3.11 0-4.93 2.33-4.93 4.74 0 .94.36 1.95.82 2.5.09.11.1.21.07.32-.08.34-.26 1.05-.3 1.2-.05.21-.17.26-.39.16-1.46-.68-2.37-2.81-2.37-4.52 0-3.68 2.68-7.06 7.71-7.06 4.05 0 7.2 2.89 7.2 6.74 0 4.02-2.54 7.26-6.06 7.26-1.18 0-2.3-.61-2.68-1.34l-.73 2.78c-.26 1.01-.98 2.27-1.46 3.05 1.11.34 2.28.53 3.5.53 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-text">Pin<span class="logo-accent">Xtract</span></span>
+          <span class="logo-badge">PRO</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" id="mainNav">
+        <a href="#downloader" class="nav-link active" data-filter="all">All Media</a>
+        <a href="#downloader" class="nav-link" data-filter="video">Videos (MP4)</a>
+        <a href="#downloader" class="nav-link" data-filter="image">Images (HD)</a>
+        <a href="#downloader" class="nav-link" data-filter="gif">GIFs</a>
+        <a href="#how-to" class="nav-link">How To Use</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- History Drawer Button -->
+        <button class="icon-btn" id="historyToggleBtn" title="Recent Downloads History" aria-label="Recent Downloads">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span class="history-badge" id="historyCount">0</span>
+        </button>
+
+        <!-- Theme Toggle (Dark/Light) -->
+        <button class="icon-btn theme-toggle" id="themeToggleBtn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Extensions Quick Menu -->
+        <a href="#extensions" class="btn-extension-badge" title="Browser Extensions">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5z"/>
+          </svg>
+          <span>Extension</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <a href="#downloader" class="mobile-nav-link active" data-filter="all">🔥 All Media Downloader</a>
+    <a href="#downloader" class="mobile-nav-link" data-filter="video">🎬 Pinterest Video to MP4</a>
+    <a href="#downloader" class="mobile-nav-link" data-filter="image">🖼️ Pinterest Image Downloader</a>
+    <a href="#downloader" class="mobile-nav-link" data-filter="gif">✨ Pinterest GIF Downloader</a>
+    <a href="#downloader" class="mobile-nav-link" data-filter="carousel">📚 Story & Carousel Downloader</a>
+    <a href="#how-to" class="mobile-nav-link">📖 How to Download Guide</a>
+    <a href="#comparison" class="mobile-nav-link">⚖️ Supported vs Unsupported</a>
+    <a href="#faq" class="mobile-nav-link">❓ Frequently Asked Questions</a>
+  </div>
+
+  <!-- Main Hero Downloader Section -->
+  <main class="hero-section" id="downloader">
+    <!-- Ambient Background Lighting -->
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+
+    <div class="container hero-container">
+      
+      <!-- Status Chip -->
+      <div class="hero-chip">
+        <span class="pulsing-dot"></span>
+        <span id="heroChipText">100% Free • No Watermark • Ultra HD 1080p Supported</span>
+      </div>
+
+      <h1 class="hero-title" id="dynamicHeading">
+        Pinterest <span class="gradient-text">Video Downloader</span>
+      </h1>
+      <p class="hero-subtitle" id="dynamicSubtitle">
+        Download Pinterest videos, high-resolution original images, GIFs, and story carousels directly to your phone or computer in 1 click.
+      </p>
+
+      <!-- Media Mode Selector Pills -->
+      <div class="mode-pills" id="modePills">
+        <button class="mode-pill active" data-type="all">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+          All in One
+        </button>
+        <button class="mode-pill" data-type="video">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          Videos (MP4)
+        </button>
+        <button class="mode-pill" data-type="image">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          Images (4K/HD)
+        </button>
+        <button class="mode-pill" data-type="gif">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11.5 9H13v6h-1.5zM9 9H6c-.6 0-1 .5-1 1v4c0 .5.4 1 1 1h3c.6 0 1-.5 1-1v-2H8.5v1.5h-2v-3H10V10c0-.5-.4-1-1-1zm10 1.5V9h-4.5v6H16v-2h2v-1.5h-2v-1z"/></svg>
+          GIFs
+        </button>
+        <button class="mode-pill" data-type="carousel">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7 19h10V4H7v15zm-5-2h4V6H2v11zM18 6v11h4V6h-4z"/></svg>
+          Carousels & Ideas
+        </button>
+      </div>
+
+      <!-- Main Input Search Box -->
+      <div class="search-box-card">
+        <form id="downloadForm" class="download-form" autocomplete="off">
+          <div class="input-wrapper">
+            <!-- Pin Logo Indicator -->
+            <div class="input-icon-left">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#e60023">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.25 2.67 7.88 6.44 9.3-.09-.8-.17-2.02.04-2.89l1.2-5.11s-.31-.61-.31-1.52c0-1.42.82-2.49 1.85-2.49.87 0 1.29.65 1.29 1.44 0 .88-.56 2.19-.85 3.41-.24 1.01.51 1.84 1.51 1.84 1.81 0 3.21-1.91 3.21-4.66 0-2.44-1.75-4.14-4.26-4.14-3.11 0-4.93 2.33-4.93 4.74 0 .94.36 1.95.82 2.5.09.11.1.21.07.32-.08.34-.26 1.05-.3 1.2-.05.21-.17.26-.39.16-1.46-.68-2.37-2.81-2.37-4.52 0-3.68 2.68-7.06 7.71-7.06 4.05 0 7.2 2.89 7.2 6.74 0 4.02-2.54 7.26-6.06 7.26-1.18 0-2.3-.61-2.68-1.34l-.73 2.78c-.26 1.01-.98 2.27-1.46 3.05 1.11.34 2.28.53 3.5.53 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+              </svg>
+            </div>
+
+            <!-- Input Field -->
+            <input 
+              type="url" 
+              id="urlInput" 
+              class="url-input" 
+              placeholder="Paste Pinterest link here (e.g. https://pin.it/... or pinterest.com/pin/...)" 
+              required 
+              autofocus
+              spellcheck="false"
+            />
+
+            <!-- Clear Button (hidden by default) -->
+            <button type="button" class="btn-clear" id="clearBtn" title="Clear input" style="display: none;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            <!-- Paste from Clipboard Button -->
+            <button type="button" class="btn-paste" id="pasteBtn" title="Paste link from clipboard">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+              </svg>
+              <span>Paste</span>
+            </button>
+
+            <!-- Submit Download Button -->
+            <button type="submit" class="btn-download" id="submitBtn">
+              <span class="btn-text">Download</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Progress Tracker Bar -->
+        <div class="progress-wrap" id="progressWrap" style="display: none;">
+          <div class="progress-info">
+            <span class="progress-status" id="progressStatus">1. Validating Pinterest Link...</span>
+            <span class="progress-percent" id="progressPercent">25%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressBar"></div>
+          </div>
+        </div>
+
+        <!-- Quick Example Chips (Test with 1-click) -->
+        <div class="examples-container">
+          <span class="examples-label">Try Examples:</span>
+          <div class="examples-chips">
+            <button type="button" class="example-chip" data-url="https://pin.it/60m8aXr85">
+              <span>🌌 Cosmic Space Video (720p HD)</span>
+            </button>
+            <button type="button" class="example-chip" data-url="https://www.pinterest.com/pin/795377984215165340/">
+              <span>🎬 Canonical Pin URL</span>
+            </button>
+            <button type="button" class="example-chip" data-url="https://www.pinterest.com/ideas/space-wallpaper-4k-ultra-hd/926295399832/">
+              <span>📸 4K Wallpaper Collection</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Error / Warning Notice -->
+      <div class="notice-card" id="errorNotice" style="display: none;">
+        <div class="notice-icon">⚠️</div>
+        <div class="notice-content">
+          <strong id="errorTitle">Could not fetch media</strong>
+          <p id="errorMessage">Please check the link and try again.</p>
+        </div>
+        <button class="notice-close" onclick="document.getElementById('errorNotice').style.display='none'">&times;</button>
+      </div>
+
+      <!-- RESULTS CONTAINER (Generated dynamically) -->
+      <section class="results-section" id="resultsSection" style="display: none;">
+        <div class="result-card">
+          <div class="result-header">
+            <div class="result-badge" id="resMediaTypeBadge">
+              <span class="badge-dot"></span>
+              <span id="resMediaTypeText">VIDEO FOUND</span>
+            </div>
+            <div class="result-actions-top">
+              <button class="btn-action-small" id="qrCodeBtn" title="Scan QR Code to download on Mobile">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3 3h8v8H3zm2 2v4h4V5zm8-2h8v8h-8zm2 2v4h4V5zM3 13h8v8H3zm2 2v4h4v-4zm13-2h3v2h-3zm-3 2h3v3h-3zm3 3h3v3h-3zm-3 3h3v2h-3zm6-5h2v6h-2z"/></svg>
+                <span>Mobile QR</span>
+              </button>
+              <button class="btn-action-small" id="openPinBtn" title="View original on Pinterest">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <span>Pinterest</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="result-grid">
+            <!-- Left: Interactive Preview Player / Lightbox -->
+            <div class="result-preview-col">
+              <div class="media-player-container" id="playerContainer">
+                <!-- Video Element -->
+                <video id="resVideo" class="media-video" playsinline controls preload="metadata"></video>
+                <!-- Image Element -->
+                <img id="resImage" class="media-image" alt="Pinterest Media Preview" style="display: none;" />
+              </div>
+              
+              <!-- Video Quick Tools (Speed, Loop) -->
+              <div class="player-controls-bar" id="videoExtraControls" style="display: none;">
+                <button class="tool-btn" id="loopToggleBtn" title="Toggle Loop">🔁 Loop</button>
+                <div class="speed-selector">
+                  <span>Speed:</span>
+                  <select id="videoSpeedSelect" aria-label="Playback Speed">
+                    <option value="0.75">0.75x</option>
+                    <option value="1" selected>1.0x</option>
+                    <option value="1.25">1.25x</option>
+                    <option value="1.5">1.5x</option>
+                    <option value="2">2.0x</option>
+                  </select>
+                </div>
+                <button class="tool-btn" id="pipBtn" title="Picture in Picture">📺 PiP</button>
+              </div>
+            </div>
+
+            <!-- Right: Metadata & Quality Options -->
+            <div class="result-details-col">
+              <h2 class="result-title" id="resTitle">Embark on a Cosmic Quest</h2>
+              
+              <div class="creator-badge" id="resCreatorBadge">
+                <div class="creator-avatar" id="resCreatorAvatar">P</div>
+                <div class="creator-info">
+                  <span class="creator-label">Pinned by</span>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="creator-name" id="resCreatorName">Pinterest Creator</a>
+                </div>
+              </div>
+
+              <p class="result-desc" id="resDesc">Loading description...</p>
+
+              <!-- Stats tags -->
+              <div class="stats-row" id="resStatsRow">
+                <span class="stat-pill" id="statSaves">❤️ 5.2k Saves</span>
+                <span class="stat-pill" id="statComments">💬 34 Comments</span>
+                <span class="stat-pill" id="statDuration">⏱️ 60s</span>
+                <span class="stat-pill" id="statQuality">HD 720p</span>
+              </div>
+
+              <!-- Available Download Options -->
+              <div class="download-options-box">
+                <h3 class="options-title">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Select Download Resolution</span>
+                </h3>
+
+                <div class="options-list" id="resOptionsList">
+                  <!-- Dynamically populated buttons -->
+                </div>
+              </div>
+
+              <!-- Secondary utility buttons -->
+              <div class="action-buttons-row">
+                <button class="btn-utility" id="copyDirectLinkBtn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy Direct URL</span>
+                </button>
+                <button class="btn-utility" id="downloadAnotherBtn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                  <span>Download Another</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel / Multi-item Gallery (if present) -->
+          <div class="gallery-section" id="resGallerySection" style="display: none;">
+            <h3 class="gallery-title">Collection & Story Slides</h3>
+            <div class="gallery-grid" id="resGalleryGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Badges Bar -->
+      <div class="trust-bar">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>100% Secure & Clean</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3b82f6" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          <span>Fast DL2 Cloud Delivery</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          <span>Unlimited Free Downloads</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ec4899" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          <span>Works on iOS, Android & PC</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Recent Downloads History Drawer Modal -->
+  <div class="history-drawer-backdrop" id="historyDrawerBackdrop">
+    <div class="history-drawer" id="historyDrawer">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <h3>Recent Downloads</h3>
+        </div>
+        <div class="drawer-header-actions">
+          <button class="btn-clear-history" id="clearHistoryBtn">Clear All</button>
+          <button class="drawer-close" id="closeHistoryBtn">&times;</button>
+        </div>
+      </div>
+      <div class="drawer-body" id="historyList">
+        <!-- Rendered dynamically -->
+        <div class="history-empty">
+          <p>No downloads yet in this browser.</p>
+          <small>Pins you download will appear here for fast re-access.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile QR Code Modal -->
+  <div class="modal-backdrop" id="qrModalBackdrop" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Scan to Download on Phone</h3>
+        <button class="modal-close" id="closeQrModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="qr-code-box" id="qrCodeContainer">
+          <img id="qrCodeImage" alt="QR Code" width="200" height="200" />
+        </div>
+        <p class="modal-tip">Open your iPhone Camera or Android QR Scanner to open this pin directly on your smartphone.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: How to Download (Interactive Guide) -->
+  <section class="section-container" id="how-to">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Step by Step Guide</span>
+        <h2 class="section-title">How to Download Pinterest Media</h2>
+        <p class="section-subtitle">Save Pinterest videos, high-resolution photos, and animated GIFs to your phone's camera roll or computer in 3 quick steps.</p>
+        
+        <!-- Platform Switcher Tabs -->
+        <div class="platform-tabs">
+          <button class="platform-tab active" data-platform="mobile">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            Mobile (iPhone / Android)
+          </button>
+          <button class="platform-tab" data-platform="desktop">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            Desktop (Mac / Windows)
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Steps View -->
+      <div class="steps-grid" id="stepsMobile">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon-wrap">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#e60023" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+          </div>
+          <h3 class="step-title">1. Copy Link on Pinterest</h3>
+          <p class="step-desc">Open the Pinterest App, locate the video or image, tap the <strong>••• (Three Dots)</strong> icon or Share button, and select <strong>"Copy Link"</strong>.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon-wrap">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#e60023" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+          </div>
+          <h3 class="step-title">2. Paste Link on PinXtract</h3>
+          <p class="step-desc">Open <strong>pinxtract.com</strong> in Safari or Chrome, tap the <strong>"Paste"</strong> button in our search bar, and hit <strong>"Download"</strong>.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon-wrap">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#e60023" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </div>
+          <h3 class="step-title">3. Save to Camera Roll</h3>
+          <p class="step-desc">Choose your preferred quality (1080p, 720p HD MP4, or Original Image) and tap Download to save it straight to your device folder.</p>
+        </div>
+      </div>
+
+      <!-- Desktop Steps View (Hidden by default) -->
+      <div class="steps-grid" id="stepsDesktop" style="display: none;">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon-wrap">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#e60023" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          </div>
+          <h3 class="step-title">1. Copy URL from Browser</h3>
+          <p class="step-desc">Go to <strong>pinterest.com</strong> on Chrome, Firefox, Safari, or Edge. Click any Pin and copy the browser address bar URL.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon-wrap">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#e60023" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h3 class="step-title">2. Paste & Instant Resolve</h3>
+          <p class="step-desc">Paste the link into PinXtract. Our high-speed cloud resolver extracts all available media streams (MP4, WEBP, JPG) in under 2 seconds.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon-wrap">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#e60023" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </div>
+          <h3 class="step-title">3. Save Directly to Downloads</h3>
+          <p class="step-desc">Click any resolution button. The file is piped directly to your Downloads folder with a clean, organized filename.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: What Works / What Does Not (Comparison Grid) -->
+  <section class="section-container bg-surface" id="comparison">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Transparency</span>
+        <h2 class="section-title">What Works & What Does Not Work</h2>
+        <p class="section-subtitle">PinXtract is strictly built for public Pinterest content and provides 100% genuine source files without downscaling or synthetic watermarks.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- What Works -->
+        <div class="comparison-card works-card">
+          <div class="comparison-card-header">
+            <div class="badge-icon success">✓</div>
+            <h3>What Works (Supported)</h3>
+          </div>
+          <ul class="comparison-list">
+            <li>
+              <span class="icon-check">✓</span>
+              <div>
+                <strong>Public Pinterest Video Pins</strong>
+                <p>Full 1080p, 720p HD, and 480p MP4 videos with audio.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-check">✓</span>
+              <div>
+                <strong>Short pin.it links</strong>
+                <p>Instant redirection and canonical link resolution.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-check">✓</span>
+              <div>
+                <strong>Ultra-HD Original Images</strong>
+                <p>Upscaled direct links to original 4K/2K resolution source files.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-check">✓</span>
+              <div>
+                <strong>Animated GIFs</strong>
+                <p>Both animated GIF and lightweight MP4 formats.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-check">✓</span>
+              <div>
+                <strong>Stories, Carousels & Ideas Pages</strong>
+                <p>Multi-slide collections with individual slide downloads.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-check">✓</span>
+              <div>
+                <strong>Public Profiles & Boards</strong>
+                <p>Up to 50 public pins per request.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- What Does Not Work -->
+        <div class="comparison-card not-works-card">
+          <div class="comparison-card-header">
+            <div class="badge-icon danger">✕</div>
+            <h3>What Does Not Work</h3>
+          </div>
+          <ul class="comparison-list">
+            <li>
+              <span class="icon-cross">✕</span>
+              <div>
+                <strong>Private & Secret Boards</strong>
+                <p>We respect privacy and do not bypass Pinterest access controls.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-cross">✕</span>
+              <div>
+                <strong>Login-Restricted or Blocked Content</strong>
+                <p>Content requiring private user authentication cannot be accessed.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-cross">✕</span>
+              <div>
+                <strong>Deleted or Removed Pins</strong>
+                <p>Pins removed by the author or Pinterest copyright enforcement.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-cross">✕</span>
+              <div>
+                <strong>Artificial Upscaling</strong>
+                <p>We deliver the exact original file uploaded by the creator; we never forge fake 4K pixels.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quality Note Box -->
+      <div class="quality-callout">
+        <div class="callout-icon">💡</div>
+        <div class="callout-text">
+          <strong>Source Quality Guarantee:</strong> PinXtract retrieves the highest bitrate stream provided by Pinterest's CDN servers. If a pin was uploaded in 1080p, you will receive full 1080p; if uploaded in 720p, 720p is delivered with zero re-encoding loss.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Supported Pinterest Link Formats -->
+  <section class="section-container" id="supported-urls">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Compatibility</span>
+        <h2 class="section-title">Supported Pinterest Link Formats</h2>
+        <p class="section-subtitle">PinXtract supports all official Pinterest domains and international localized websites.</p>
+      </div>
+
+      <div class="supported-formats-card">
+        <div class="format-row">
+          <div class="format-col-label">
+            <span class="format-badge">Short Link</span>
+            <strong>Mobile Share URL</strong>
+          </div>
+          <code class="format-code">https://pin.it/60m8aXr85</code>
+          <button class="btn-copy-format" data-copy="https://pin.it/60m8aXr85">Try URL</button>
+        </div>
+
+        <div class="format-row">
+          <div class="format-col-label">
+            <span class="format-badge">Standard Pin</span>
+            <strong>Global Pin Link</strong>
+          </div>
+          <code class="format-code">https://www.pinterest.com/pin/795377984215165340/</code>
+          <button class="btn-copy-format" data-copy="https://www.pinterest.com/pin/795377984215165340/">Try URL</button>
+        </div>
+
+        <div class="format-row">
+          <div class="format-col-label">
+            <span class="format-badge">Regional Pin</span>
+            <strong>Country Specific (e.g. IN, UK, DE, FR)</strong>
+          </div>
+          <code class="format-code">https://in.pinterest.com/pin/795377984215165340/</code>
+          <button class="btn-copy-format" data-copy="https://in.pinterest.com/pin/795377984215165340/">Try URL</button>
+        </div>
+
+        <div class="format-row">
+          <div class="format-col-label">
+            <span class="format-badge">Ideas Collection</span>
+            <strong>Pinterest Ideas Page</strong>
+          </div>
+          <code class="format-code">https://www.pinterest.com/ideas/space-wallpaper-4k-ultra-hd/926295399832/</code>
+          <button class="btn-copy-format" data-copy="https://www.pinterest.com/ideas/space-wallpaper-4k-ultra-hd/926295399832/">Try URL</button>
+        </div>
+
+        <div class="format-row">
+          <div class="format-col-label">
+            <span class="format-badge">Answers Collection</span>
+            <strong>Pinterest Answers Page</strong>
+          </div>
+          <code class="format-code">https://www.pinterest.com/answers/how-to-save-gifs-on-pinterest/894609280868/</code>
+          <button class="btn-copy-format" data-copy="https://www.pinterest.com/answers/how-to-save-gifs-on-pinterest/894609280868/">Try URL</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Browser Extensions Promo Banner -->
+  <section class="section-container bg-surface" id="extensions">
+    <div class="container">
+      <div class="extension-banner-card">
+        <div class="extension-content">
+          <span class="section-tag">Browser Extensions</span>
+          <h2 class="extension-title">Download Pinterest Media in 1-Click from Your Browser</h2>
+          <p class="extension-subtitle">Add the PinXtract extension to Google Chrome, Microsoft Edge, or Mozilla Firefox to download any video or image without leaving Pinterest.</p>
+          
+          <div class="extension-buttons">
+            <a href="https://chromewebstore.google.com/" target="_blank" rel="noopener noreferrer" class="btn-store chrome">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              <span>Chrome Store</span>
+            </a>
+            <a href="https://microsoftedge.microsoft.com/addons" target="_blank" rel="noopener noreferrer" class="btn-store edge">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0 0 5.373 0 12zm13.5-7.5c3.5 0 5 2.5 5 5 0 3-2 5.5-5.5 5.5-3 0-5.5-2-5.5-5.5 0-3.5 2.5-5 6-5z"/></svg>
+              <span>Microsoft Edge</span>
+            </a>
+            <a href="https://addons.mozilla.org/" target="_blank" rel="noopener noreferrer" class="btn-store firefox">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5z"/></svg>
+              <span>Firefox Add-on</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Frequently Asked Questions (FAQ) -->
+  <section class="section-container" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about downloading Pinterest videos, images, and GIFs.</p>
+        
+        <!-- Live FAQ Search Filter -->
+        <div class="faq-search-wrapper">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="faqSearchInput" class="faq-search-input" placeholder="Search questions (e.g. watermark, iphone, audio, 1080p)..." />
+        </div>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I download videos from Pinterest for free?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Yes, 100% free!</strong> PinXtract lets you download unlimited Pinterest videos, GIFs, and images without requiring any subscription, registration, or credit card.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do downloaded videos have watermarks?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p><strong>No.</strong> Unlike other social media downloaders, PinXtract provides the clean original MP4 video stream directly from Pinterest's CDN servers with zero added watermarks or logos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I save Pinterest videos to my iPhone Camera Roll?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>On your iPhone, copy the link from the Pinterest App, open Safari, paste the link on PinXtract, and tap Download. Safari will prompt "Do you want to download...?". Tap Download. Open your Files app (or Safari downloads), tap the video, tap the Share icon, and select <strong>"Save Video"</strong> to save directly to your Camera Roll.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What video resolutions and formats are supported?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>PinXtract supports <strong>1080p Full HD</strong>, <strong>720p HD</strong>, and <strong>480p SD</strong> in universal standard <strong>MP4</strong> format with AAC audio. For images, we support Original 4K/2K JPEG, PNG, and animated GIF formats.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Where do downloaded files go on my computer or Android?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>On Windows and Mac, downloaded files are automatically placed in your computer's <strong>Downloads</strong> folder. On Android, files are saved in your internal storage Downloads folder and automatically appear in Google Photos / Gallery.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I download Pinterest boards and profile pins in bulk?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. PinXtract can parse public Pinterest boards, ideas collections, and story carousels up to 50 pins per request, allowing you to preview and download all slides.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Does PinXtract store copies of downloaded files?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p><strong>No.</strong> PinXtract does not host or store any user media. Media files are streamed directly from Pinterest's public content delivery networks (CDNs) straight to your device.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: What's New & Updates Timeline -->
+  <section class="section-container bg-surface" id="changelog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Release Notes</span>
+        <h2 class="section-title">Latest Updates & Service Status</h2>
+        <p class="section-subtitle">Real-time changelog and technical improvements to keep download speeds lightning fast.</p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">October 2026 • v2.5.0</div>
+            <h3 class="timeline-title">DL2 High-Speed Streaming Proxy & Direct File Attachment</h3>
+            <p>Added the streaming download proxy engine. Files now download natively to phones and desktops with proper filenames instead of opening in a new browser tab. Added dark/light mode toggle and local history drawer.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">July 2026 • v2.4.0</div>
+            <h3 class="timeline-title">Pinterest Ideas & Answers Collection Support</h3>
+            <p>Expanded support for Pinterest Ideas and Answers pages, multi-slide carousels, and high-resolution original image upscaling.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">June 2026 • v2.3.0</div>
+            <h3 class="timeline-title">Mobile 4G & 5G Performance Boost</h3>
+            <p>Optimized payload size for mobile networks. Added 1-click clipboard paste and instant pin.it short URL resolver.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-row">
+        <div class="footer-brand-col">
+          <div class="brand-logo footer-logo">
+            <div class="logo-icon-wrap small">
+              <svg class="logo-pin-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.25 2.67 7.88 6.44 9.3-.09-.8-.17-2.02.04-2.89l1.2-5.11s-.31-.61-.31-1.52c0-1.42.82-2.49 1.85-2.49.87 0 1.29.65 1.29 1.44 0 .88-.56 2.19-.85 3.41-.24 1.01.51 1.84 1.51 1.84 1.81 0 3.21-1.91 3.21-4.66 0-2.44-1.75-4.14-4.26-4.14-3.11 0-4.93 2.33-4.93 4.74 0 .94.36 1.95.82 2.5.09.11.1.21.07.32-.08.34-.26 1.05-.3 1.2-.05.21-.17.26-.39.16-1.46-.68-2.37-2.81-2.37-4.52 0-3.68 2.68-7.06 7.71-7.06 4.05 0 7.2 2.89 7.2 6.74 0 4.02-2.54 7.26-6.06 7.26-1.18 0-2.3-.61-2.68-1.34l-.73 2.78c-.26 1.01-.98 2.27-1.46 3.05 1.11.34 2.28.53 3.5.53 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+              </svg>
+            </div>
+            <span class="logo-text">Pin<span class="logo-accent">Xtract</span></span>
+          </div>
+          <p class="footer-tagline">The fastest, cleanest, and most reliable Pinterest Video Downloader on the web.</p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Tools & Downloaders</h4>
+          <ul>
+            <li><a href="#downloader" class="footer-link" data-filter="video">Pinterest Video Downloader</a></li>
+            <li><a href="#downloader" class="footer-link" data-filter="image">Pinterest Image Downloader</a></li>
+            <li><a href="#downloader" class="footer-link" data-filter="gif">Pinterest GIF Downloader</a></li>
+            <li><a href="#downloader" class="footer-link" data-filter="carousel">Story & Carousel Saver</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Navigation</h4>
+          <ul>
+            <li><a href="#how-to">How To Use</a></li>
+            <li><a href="#comparison">What Works / What Does Not</a></li>
+            <li><a href="#supported-urls">Supported Link Formats</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#changelog">Updates Timeline</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Browser Extensions</h4>
+          <ul>
+            <li><a href="https://chromewebstore.google.com/" target="_blank" rel="noopener noreferrer">Chrome Web Store</a></li>
+            <li><a href="https://microsoftedge.microsoft.com/addons" target="_blank" rel="noopener noreferrer">Microsoft Edge Addons</a></li>
+            <li><a href="https://addons.mozilla.org/" target="_blank" rel="noopener noreferrer">Firefox Addons</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer-box">
+        <p><strong>Disclaimer:</strong> PinXtract is an independent web tool and is <strong>not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pinterest Inc.</strong> or any of its subsidiaries. All Pinterest logos and product marks are registered trademarks of Pinterest, Inc. PinXtract does not host or store any media files; all media is delivered directly from the original public CDN servers to the user's browser. Please respect copyright laws and download only public content that you own or have permission to save.</p>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 PinXtract. All rights reserved. Created with high performance and zero watermarks.</p>
+        <div class="footer-legal-links">
+          <a href="#faq">Privacy Policy</a>
+          <span>•</span>
+          <a href="#faq">Terms of Service</a>
+          <span>•</span>
+          <a href="#faq">DMCA Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
