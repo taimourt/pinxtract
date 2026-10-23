@@ -3,6 +3,9 @@ const cors = require('cors');
 const path = require('path');
 const { extractPinterestMedia, normalizePinterestUrl } = require('./pinterestScraper');
 
+const fs = require('fs');
+const { SUPPORTED_LANGUAGES, localizeHtml } = require('./localization');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -11,8 +14,77 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static frontend files
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve translation JSON files statically
+app.use('/translations', express.static(path.join(__dirname, 'translations')));
+
+// Serve static assets without auto-serving index.html so localization routes can handle it
+app.use(express.static(path.join(__dirname, 'public'), { index: false }));
+
+const templateHtmlPath = path.join(__dirname, 'public/index.html');
+function getTemplate() {
+  try {
+    return fs.readFileSync(templateHtmlPath, 'utf8');
+  } catch (err) {
+    console.error('Error reading template HTML:', err);
+    return '';
+  }
+}
+
+/**
+ * Sitemap & Robots for Search Engine Indexing
+ */
+app.get('/sitemap.xml', (req, res) => {
+  const baseUrl = 'https://pinxtract.com';
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
+
+  SUPPORTED_LANGUAGES.forEach(item => {
+    const loc = item.code === 'en' ? `${baseUrl}/` : `${baseUrl}/${item.code}`;
+    xml += '  <url>\n';
+    xml += `    <loc>${loc}</loc>\n`;
+    SUPPORTED_LANGUAGES.forEach(alt => {
+      const altHref = alt.code === 'en' ? `${baseUrl}/` : `${baseUrl}/${alt.code}`;
+      xml += `    <xhtml:link rel="alternate" hreflang="${alt.code}" href="${altHref}"/>\n`;
+    });
+    xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}/"/>\n`;
+    xml += '    <changefreq>daily</changefreq>\n';
+    xml += `    <priority>${item.code === 'en' ? '1.0' : '0.9'}</priority>\n`;
+    xml += '  </url>\n';
+  });
+
+  xml += '</urlset>';
+  res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+  res.send(xml);
+});
+
+app.get('/robots.txt', (req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  res.send('User-agent: *\nAllow: /\n\nSitemap: https://pinxtract.com/sitemap.xml\n');
+});
+
+/**
+ * Localized Page Routes (/fr, /es, /de, /ar, etc.)
+ */
+const supportedCodes = SUPPORTED_LANGUAGES.map(l => l.code);
+
+app.get('/:lang', (req, res, next) => {
+  const lang = req.params.lang.toLowerCase();
+  if (lang === 'en') {
+    return res.redirect(301, '/');
+  }
+  if (supportedCodes.includes(lang)) {
+    const localized = localizeHtml(getTemplate(), lang);
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    return res.send(localized);
+  }
+  next();
+});
+
+app.get('/', (req, res) => {
+  const localized = localizeHtml(getTemplate(), 'en');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(localized);
+});
 
 /**
  * Health check endpoint
@@ -177,8 +249,7 @@ app.get('/api/proxy-media', async (req, res) => {
   }
 });
 
-// Start the server
-const server = app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, () => {
   console.log(`=========================================`);
   console.log(`PinXtract server running at http://localhost:${PORT}`);
   console.log(`PinXtract HD resolution, proxy downloads, and modern UI`);

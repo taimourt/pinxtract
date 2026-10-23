@@ -112,6 +112,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initTheme();
 
+  // =========================================================================
+  // Language Switcher (i18n)
+  // =========================================================================
+  const langDropdownWrapper = document.getElementById('langDropdownWrapper');
+  const langDropdownBtn = document.getElementById('langDropdownBtn');
+
+  if (langDropdownBtn && langDropdownWrapper) {
+    langDropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdownWrapper.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!langDropdownWrapper.contains(e.target)) {
+        langDropdownWrapper.classList.remove('open');
+      }
+    });
+  }
+
+  // Language selection handling: saves preference & navigates
+  document.querySelectorAll('.lang-menu-item, .mobile-lang-chip, .footer-lang-picker a').forEach(el => {
+    el.addEventListener('click', () => {
+      const targetLang = el.getAttribute('data-lang');
+      if (targetLang) {
+        localStorage.setItem('pinxtract_lang', targetLang);
+      }
+    });
+  });
+
+  // i18n Translation Helper
+  const i18nData = window.__TRANSLATION__ || {};
+  function t(keyPath, fallback = '') {
+    if (!keyPath) return fallback;
+    const parts = keyPath.split('.');
+    let cur = i18nData;
+    for (const part of parts) {
+      if (cur === undefined || cur === null) return fallback;
+      cur = cur[part];
+    }
+    return cur !== undefined ? cur : fallback;
+  }
+
   // Banner Dismissal
   if (closeBannerBtn && topBanner) {
     closeBannerBtn.addEventListener('click', () => {
@@ -316,19 +358,19 @@ document.addEventListener('DOMContentLoaded', () => {
     errorNotice.style.display = 'none';
     progressBar.style.width = '15%';
     progressPercent.textContent = '15%';
-    progressStatus.textContent = '1. Connecting to Pinterest servers...';
+    progressStatus.textContent = t('progress.p1', '1. Validating Pinterest Link...');
 
     let percent = 15;
     progressInterval = setInterval(() => {
       if (percent < 40) {
         percent += 8;
-        progressStatus.textContent = '2. Resolving link & checking canonical pin...';
+        progressStatus.textContent = t('progress.p2', '2. Resolving Media Streams from CDN...');
       } else if (percent < 75) {
         percent += 5;
-        progressStatus.textContent = '3. Extracting HD media streams & audio...';
+        progressStatus.textContent = t('progress.p3', '3. Parsing HD Resolutions & Posters...');
       } else if (percent < 90) {
         percent += 2;
-        progressStatus.textContent = '4. Verifying file sizes & download headers...';
+        progressStatus.textContent = t('progress.p4', '4. Ready to Download!');
       }
       progressBar.style.width = `${percent}%`;
       progressPercent.textContent = `${percent}%`;
@@ -467,7 +509,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Group 1: Primary Media Streams (For videos, this contains ONLY MP4 videos!)
     const sectionTitle = document.createElement('div');
     sectionTitle.style.cssText = 'font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;';
-    sectionTitle.textContent = isVideo ? '🎬 Video Downloads (MP4)' : isGif ? '✨ GIF Downloads' : '🖼️ Image Resolutions';
+    sectionTitle.textContent = isVideo 
+      ? t('results.video_downloads', '🎬 Video Downloads (MP4)') 
+      : isGif 
+      ? t('results.gif_downloads', '✨ GIF Downloads') 
+      : t('results.image_resolutions', '🖼️ Image Resolutions');
     resOptionsList.appendChild(sectionTitle);
 
     data.media.forEach((item, index) => {
@@ -480,6 +526,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const sizeText = item.size ? item.size : '';
       const icon = item.type === 'video' ? '🎬' : item.type === 'gif' ? '✨' : '🖼️';
+      const saveActionText = item.type === 'video' 
+        ? t('results.save_mp4', 'Save MP4') 
+        : t('results.save_jpg', 'Save Image');
       
       optionBtn.innerHTML = `
         <div class="option-left">
@@ -491,12 +540,12 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="option-right">
           ${sizeText ? `<span class="option-size-tag">${sizeText}</span>` : ''}
-          <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 6px;">Save MP4</span>
+          <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 6px;">${saveActionText}</span>
         </div>
       `;
 
       optionBtn.addEventListener('click', (e) => {
-        showToast(`Starting ${item.format} download (${item.quality})...`, 'success');
+        showToast(`${t('results.starting_dl', 'Starting download...')} (${item.quality})`, 'success');
       });
 
       resOptionsList.appendChild(optionBtn);
@@ -506,7 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isVideo && data.posters && data.posters.length > 0) {
       const posterHeader = document.createElement('div');
       posterHeader.style.cssText = 'font-size: 0.8rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1.25rem; margin-bottom: 0.5rem; border-top: 1px solid var(--bg-card-border); padding-top: 0.85rem;';
-      posterHeader.textContent = '📸 Video Cover / Thumbnail (Image Only)';
+      posterHeader.textContent = t('results.cover_photo', '📸 Video Cover / Thumbnail (Image Only)');
       resOptionsList.appendChild(posterHeader);
 
       data.posters.forEach(poster => {
@@ -524,7 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="option-right">
             ${poster.size ? `<span class="option-size-tag">${poster.size}</span>` : ''}
-            <span>Save JPG</span>
+            <span>${t('results.save_jpg', 'Save JPG')}</span>
           </div>
         `;
         posterBtn.addEventListener('click', () => {
@@ -680,8 +729,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (list.length === 0) {
       historyList.innerHTML = `
         <div class="history-empty">
-          <p>No downloads yet in this browser.</p>
-          <small>Pins you download will appear here for fast re-access.</small>
+          <p>${t('history.empty', 'No downloads yet in this browser.')}</p>
+          <small>${t('history.empty_sub', 'Pins you download will appear here for fast re-access.')}</small>
         </div>
       `;
       return;
